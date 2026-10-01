@@ -1,0 +1,75 @@
+password = str
+username = str
+vault = str
+while True:
+    print("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("WELCOME TO DATA BANK 3000")
+    print("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("type 1 to login")
+    print("type 2 to register")
+    page1 = str(input("input : "))
+    while True:
+        if page1 == "1":
+            username2 = str(input("type username : "))
+            password2 = str(input("type password : "))
+            if username2 == username and password2 == password:
+                print("login successful")
+                while True:
+                    print("would you like to")
+                    print("1. check your vault")
+                    print("2. edit your vault")
+                    print("3. edit your password")
+                    print("4. exit")
+                    page2 = str(input("input : "))
+                    if page2 == "1":
+                        print("your vault : ", vault)
+                        continue
+                    elif page2 == "2":
+                        vault = str(input("type your new secret data : "))
+                        print("your data was saved successfully")
+                        continue
+                    elif page2 == "3":
+                        while True:
+                            password3 = str(input("type your new password : "))
+                            check2 = str(input("repeat your new password : "))
+                            if password3 == check2:
+                                print("your password is now set to : ", password3)
+                                password = password3
+                                break
+                            else: print("passwords do not match, please try again")
+                            continue
+                    elif page2 == "4":
+                        print("okay bye")
+                        break
+                    else: print("invalid input")
+                    break
+                break
+            else:
+                    print("wrong username or password")
+            while True:
+                print("would you like to")
+                print("1. try again")
+                print("2. exit")
+                page3 = str(input("input : "))
+                if page3 == "1":
+                    continue
+                if page3 == "2":
+                    break
+                else: print("invalid input, please try again")
+                continue
+        elif page1 == "2":
+            while True:
+                username = str(input("create a username : "))
+                password = str(input("create a password : "))
+                check = str(input("repeat your password : "))
+                if password == check:
+                    break
+                else:
+                    print("passwords do not match")
+            print("vault creation successful")
+            vault = str(input("type your secret data : "))
+            print("your data is safe and secure")
+            break
+        else:
+            print("invalid input")
+            break
